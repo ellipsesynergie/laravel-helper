@@ -4,20 +4,20 @@ This package contain some helper for assets, standardize ajax request, AwsS3 uti
 
 ### Status
 
-[![Build Status](https://travis-ci.org/ellipsesynergie/laravel4-bootstrap.png?branch=master)](https://travis-ci.org/ellipsesynergie/laravel4-bootstrap)
-[![Total Downloads](https://poser.pugx.org/ellipsesynergie/laravel4-bootstrap/downloads.png)](https://packagist.org/packages/ellipsesynergie/laravel4-bootstrap)
-[![Latest Stable Version](https://poser.pugx.org/ellipsesynergie/laravel4-bootstrap/v/stable.png)](https://packagist.org/packages/ellipsesynergie/laravel4-bootstrap)
+[![Build Status](https://travis-ci.org/ellipsesynergie/laravel-helper.png?branch=master)](https://travis-ci.org/ellipsesynergie/laravel-helper)
+[![Total Downloads](https://poser.pugx.org/ellipsesynergie/laravel-helper/downloads.png)](https://packagist.org/packages/ellipsesynergie/laravel-helper)
+[![Latest Stable Version](https://poser.pugx.org/ellipsesynergie/laravel-helper/v/stable.png)](https://packagist.org/packages/ellipsesynergie/laravel-helper)
 
 ## Documentation
 
 ##Installation
 
-Begin by installing this package through Composer. Edit your project's `composer.json` file to require `ellipsesynergie/laravel4-bootstrap`.
+Begin by installing this package through Composer. Edit your project's `composer.json` file to require `ellipsesynergie/laravel-helper`.
 
 ```javascript
 {
     "require": {
-        "ellipsesynergie/laravel4-bootstrap": "dev-master"
+        "ellipsesynergie/laravel-helper": "dev-master"
     }
 }
 ```
@@ -35,5 +35,5 @@ EllipseSynergie\LaravelHelper\LaravelHelperServiceProvider
 To configure the package to meet your needs, you must publish the configuration in your application before you can modify them. Run this artisan command.
 
 ```bash
-php artisan config:publish ellipsesynergie/laravel4-bootstrap
+php artisan config:publish ellipsesynergie/laravel-helper
 ```
