@@ -3,17 +3,17 @@
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Facade for CDN
+ * Facade for AwsS3
  *
  * @author Maxime Beaudoin <maxime.beaudoin@ellipse-synergie.com>
  */
-class CDN extends Facade
+class AwsS3 extends Facade
 {
 	/**
 	 * Get the registered component.
 	 *
 	 * @return object
 	 */
-	protected static function getFacadeAccessor(){ return 'CDN'; }
+	protected static function getFacadeAccessor(){ return 'awss3'; }
 
 }
