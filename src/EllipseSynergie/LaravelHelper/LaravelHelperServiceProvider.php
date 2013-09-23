@@ -40,7 +40,8 @@ class LaravelHelperServiceProvider extends ServiceProvider {
 		$this->registerAssets();
 		$this->registerAjax();
 		$this->registerAwsS3();
-		$this->registerStr();		
+		$this->registerStr();
+		$this->registerJavascript();	
 	}
 	
 	/**
@@ -68,9 +69,9 @@ class LaravelHelperServiceProvider extends ServiceProvider {
 	{
 		//Create the permissions object in the application instance
 		$this->app['awss3'] = new AwsS3 (
-				Config::get('laravel-helper::aws.s3.key'),
-				Config::get('laravel-helper::aws.s3.secret'),
-				Config::get('laravel-helper::aws.s3.bucket')
+			Config::get('laravel-helper::aws.s3.key'),
+			Config::get('laravel-helper::aws.s3.secret'),
+			Config::get('laravel-helper::aws.s3.bucket')
 		);
 	}
 	
@@ -91,6 +92,15 @@ class LaravelHelperServiceProvider extends ServiceProvider {
 		{
 			return $this->app['str']->replaceAccents($value);
 		});
+	}
+
+	/**
+	 * Javascript
+	 */
+	public function registerJavascript()
+	{
+		//Create the Ajax object
+		$this->app['javascript'] = new Javascript();
 	}
 
 	/**
