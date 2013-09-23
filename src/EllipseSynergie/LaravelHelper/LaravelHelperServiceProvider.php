@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Config;
 use EllipseSynergie\LaravelHelper\Helper\Ajax;
 use EllipseSynergie\LaravelHelper\Helper\Assets;
 use EllipseSynergie\LaravelHelper\Helper\AwsS3;
+use EllipseSynergie\LaravelHelper\Helper\Str;
 
 class LaravelHelperServiceProvider extends ServiceProvider {
 
@@ -44,6 +45,9 @@ class LaravelHelperServiceProvider extends ServiceProvider {
 		
 		//Create the Ajax object
 		$this->app['ajax'] = new Ajax();
+		
+		//Create the Str object
+		$this->app['str'] = new Str(Config::get('application.encoding'));
 		
 		//Create the Assets object
 		$this->app['assets'] = new Assets(Config::get('laravel-helper::assets'), url() . DIRECTORY_SEPARATOR, Config::get('laravel-helper::assets.basePath'));
