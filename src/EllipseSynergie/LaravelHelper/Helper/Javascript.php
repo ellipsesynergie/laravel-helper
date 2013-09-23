@@ -81,8 +81,8 @@ class Javascript {
 	{
 
 		//Init the application
-		$render = "\n" . $this->namespace . '.Application = new MonLab.Prototype.Application(' . (!empty($this->options)?json_encode($this->options):'') . ');' . "\n";
-		$render .= 'MonLab.Application.Modules = {};' . "\n";
+		$render = "\n" . $this->namespace . '.Application = new ' . $this->namespace . '.Prototype.Application(' . (!empty($this->options)?json_encode($this->options):'') . ');' . "\n";
+		$render .= $this->namespace . '.Application.Modules = {};' . "\n";
 		
 		//For each module
 		foreach ($this->modules as $module_name => $module){			
