@@ -60,7 +60,7 @@ class LaravelHelperServiceProvider extends ServiceProvider {
 	public function registerAjax()
 	{
 		//Create the Ajax object
-		$this->app['ajax'] = new Ajax(Config::get('laravel-helper::javascript.namespace'));
+		$this->app['ajax'] = new Ajax();
 	}
 	
 	/**
@@ -101,7 +101,7 @@ class LaravelHelperServiceProvider extends ServiceProvider {
 	public function registerJavascript()
 	{
 		//Create the Ajax object
-		$this->app['javascript'] = new Javascript();
+		$this->app['javascript'] = new Javascript(Config::get('laravel-helper::javascript.namespace'));
 	}
 
 	/**
