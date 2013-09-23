@@ -6,6 +6,7 @@ use EllipseSynergie\LaravelHelper\Helper\Ajax;
 use EllipseSynergie\LaravelHelper\Helper\Assets;
 use EllipseSynergie\LaravelHelper\Helper\AwsS3;
 use EllipseSynergie\LaravelHelper\Helper\Str;
+use EllipseSynergie\LaravelHelper\Helper\Javascript;
 
 class LaravelHelperServiceProvider extends ServiceProvider {
 
