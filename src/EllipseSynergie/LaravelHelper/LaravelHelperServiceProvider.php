@@ -84,14 +84,14 @@ class LaravelHelperServiceProvider extends ServiceProvider {
 		//Create the Str object
 		$this->app['str'] = new Str(Config::get('application.encoding'));
 		
-		\Str::macro('entities', function($value)
-		{
-			return $this->app['str']->entities($value);
-		});
-		
 		\Str::macro('replaceAccents', function($value)
 		{
 			return $this->app['str']->replaceAccents($value);
+		});
+		
+		\Str::macro('arrayStripTags', function($value)
+		{
+			return $this->app['str']->arrayStripTags($value);
 		});
 	}
 
