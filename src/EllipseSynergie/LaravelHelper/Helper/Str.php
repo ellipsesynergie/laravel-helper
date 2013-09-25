@@ -16,21 +16,6 @@ class Str {
 	{
 		$this->encoding = $encoding;
 	}
-	
-	/**
-	 * Convert HTML characters to entities.
-	 *
-	 * The encoding specified in the application configuration file will be used.
-	 *
-	 * @todo Use Html::entities($value)
-	 * @param  string  $value
-	 * @return string
-	 */
-	public function entities($value)
-	{
-		return htmlentities($value, ENT_QUOTES, $this->encoding, false);
-
-	} // entities()
 
 	/**
 	 * Replace accents by their letter counterpart (e.g 'é' becoming 'e')
@@ -45,5 +30,31 @@ class Str {
 	    	array('a', 'a', 'a', 'a', 'e', 'e', 'e', 'e', 'i', 'i', 'i', 'i', 'o', 'o', 'o', 'o', 'o', 'o', 'u', 'u', 'u', 'u'),
 	    	mb_strtolower($str, $this->encoding)
 	    );
-	}	
+	}
+	
+	/**
+	 * Method to cleanup a array of data
+	 */
+	public function arrayStripTags($array)
+	{
+		$result = array();
+	
+		foreach ($array as $key => $value) {
+			// Don't allow tags on key either, maybe useful for dynamic forms.
+			$key = strip_tags($key);
+	
+			// If the value is an array, we will just recurse back into the
+			// function to keep stripping the tags out of the array,
+			// otherwise we will set the stripped value.
+			if (is_array($value)) {
+				$result[$key] = static::arrayStripTags($value);
+			} else {
+				// I am using strip_tags(), you may use htmlentities(),
+				// also I am doing trim() here, you may remove it, if you wish.
+				$result[$key] = trim(strip_tags($value));
+			}
+		}
+	
+		return $result;
+	}
 }
