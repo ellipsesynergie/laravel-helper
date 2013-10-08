@@ -30,6 +30,14 @@ Once this operation completes, you need to add the service provider. Open `app/c
 EllipseSynergie\LaravelHelper\LaravelHelperServiceProvider
 ```
 
+Note : You can add class aliases in `app/config/app.php` if you want to use helpers facades.
+```php
+'Ajax'    	  => 'EllipseSynergie\LaravelHelper\Facades\Ajax',
+'Assets'      => 'EllipseSynergie\LaravelHelper\Facades\Assets',
+'AwsS3'       => 'EllipseSynergie\LaravelHelper\Facades\AwsS3',
+'Javascript'  => 'EllipseSynergie\LaravelHelper\Facades\Javascript',
+```
+
 ##Configurations
 
 To configure the package to meet your needs, you must publish the configuration in your application before you can modify them. Run this artisan command.
