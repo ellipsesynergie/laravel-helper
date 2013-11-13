@@ -138,7 +138,7 @@ class Assets {
 		
 				foreach($collection as $file)
 				{
-					$response[] = str_replace('{{url}}', $this->versionized($file), $format);
+					$response[] = str_replace('{{url}}', $this->storage($file), $format);
 				}
 			}
 				
