@@ -163,7 +163,7 @@ class Assets {
 		if ($baseUrl) {
 			
 			//
-			$url = $baseUrl . '/' . $uri;
+			$url = $baseUrl . $uri;
 
 		//ELse
 		} else {
@@ -183,12 +183,17 @@ class Assets {
 	 */
 	public function storage($uri)
 	{	
-		//By default we take the S3 bucket
-		$baseUrl = $this->config['storage']['bucket'];
-	
-		// If we have a CDN
-		if ($this->config['storage']['cdn']['enabled'] === true) {
-			$baseUrl = $this->config['storage']['cdn']['url'];
+		
+		//If we have storage config
+		if (isset($this->config['storage'])){
+			
+			//By default we take the S3 bucket
+			$baseUrl = $this->config['storage']['bucket'];
+		
+			// If we have a CDN
+			if ($this->config['storage']['cdn']['enabled'] === true) {
+				$baseUrl = $this->config['storage']['cdn']['url'];
+			}
 		}
 		
 		//If base url still empty
