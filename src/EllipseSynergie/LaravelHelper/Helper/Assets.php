@@ -181,17 +181,22 @@ class Assets {
 	 * @param string $uri
 	 * @return string
 	 */
-	public static function storage($uri)
+	public function storage($uri)
 	{	
 		//By default we take the S3 bucket
 		$baseUrl = $this->config['storage']['bucket'];
 	
 		// If we have a CDN
-		if ($this->config['cdn']['enabled'] === true) {
-			$baseUrl = $this->config['cdn']['url'];
+		if ($this->config['storage']['cdn']['enabled'] === true) {
+			$baseUrl = $this->config['storage']['cdn']['url'];
+		}
+		
+		//If base url still empty
+		if (empty($baseUrl)){
+			$baseUrl = $this->baseUrl;
 		}
 	
-		return $this->versionized($uri, $baseUrl = null);
+		return $this->versionized($uri, $baseUrl);
 	
 	} // storage()
 
