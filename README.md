@@ -6,6 +6,7 @@
 - Ajax -> [Fractal](http://fractal.thephpleague.com)
 - Javascript -> [PHP-Vars-To-Js-Transformer](https://github.com/laracasts/PHP-Vars-To-Js-Transformer)
 - AwsS3 -> [Flysystem](http://flysystem.thephpleague.com)
+- Assets -> [Assetic](https://github.com/kriswallsmith/assetic)
 
 This package contain some helper for assets, standardize ajax request, AwsS3 utilities and more. All helpers are framework agnostic, but we provide service provider and base resource files for Laravel.
 
